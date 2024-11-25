@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { io } from "socket.io-client";
+import { io } from 'socket.io-client';
 
-const socket = io("http://localhost:3000");
+const socket = io('http://localhost:3000');
 
 function App() {
   const [user, setUser] = useState<string>();
   const [players, setPlayers] = useState<string[]>();
   const [playersInGame, setPlayersInGame] = useState<string[]>();
 
-  socket.on("players-waiting", (data: string[]) => {
+  socket.on('players-waiting', (data: string[]) => {
     setPlayers(data);
   });
 
-  socket.on("players-in-game", (data: string[]) => {
+  socket.on('players-in-game', (data: string[]) => {
     setPlayersInGame(data);
   });
 
@@ -27,21 +27,21 @@ function App() {
       />
       <button
         onClick={() => {
-          socket.emit("join", { name: user });
+          socket.emit('join', { name: user });
         }}
       >
         entrar na fila
       </button>
       <button
         onClick={() => {
-          socket.emit("join-court", { name: user });
+          socket.emit('join-court', { name: user });
         }}
       >
         entrar na quadra
       </button>
       <button
         onClick={() => {
-          socket.emit("left-court", { name: user });
+          socket.emit('left-court', { name: user });
         }}
       >
         sair da quadra
