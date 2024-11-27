@@ -5,7 +5,7 @@ import { Lobby } from './pages/Lobby';
 import { QueuePreview } from './pages/QueuePreview';
 import { YourTurn } from './pages/YourTurn';
 
-type Pages = 'login' | 'queue-preview' | 'lobby' | 'your-turn';
+import { Pages } from './types';
 
 function App() {
   const [currentPage] = useState<Pages>('login');
