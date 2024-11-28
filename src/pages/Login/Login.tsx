@@ -1,5 +1,6 @@
 import { Button } from '../../shared/Button';
 import { Card } from '../../shared/Card';
+import { Input } from '../../shared/Input';
 import { Container, Content, Header, Image, H1, H2 } from './styles';
 
 export function Login() {
@@ -12,8 +13,10 @@ export function Login() {
       <Card position="bottom">
         <Content>
           <H2>Para começar, insira o seu nome</H2>
-          {/* TODO - Add input here */}
-          <Button label="Acessar" onClick={() => {}} />
+          <Input
+            placeholder="Nome"
+            helper="Este será o nome que aparecerá na fila."
+          />
           <Button label="Acessar" onClick={() => {}} />
         </Content>
       </Card>

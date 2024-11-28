@@ -16,13 +16,22 @@ export const Header = styled.header`
   align-items: center;
   padding: 40px 32px;
   gap: 40px;
+  /* 
+  GAMBIARRA:
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+  } */
 `;
 
 export const Content = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 62px;
+  gap: 72px;
 `;
 
 export const Image = styled.img`
@@ -34,6 +43,7 @@ export const H1 = styled.h1`
   font-size: 40px;
   color: ${theme.colors.text.heading.light};
   font-weight: 600;
+  margin: 0;
 `;
 
 export const H2 = styled.h2`
@@ -41,4 +51,5 @@ export const H2 = styled.h2`
   font-size: 32px;
   color: ${theme.colors.text.heading.dark};
   font-weight: 600;
+  margin: 0;
 `;
