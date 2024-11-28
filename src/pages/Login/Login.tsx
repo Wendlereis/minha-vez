@@ -1,19 +1,28 @@
-import { Card } from '../../shared/Card/Card';
-import { Container } from './styles';
+import { Button } from '../../shared/Button';
+import { Card } from '../../shared/Card';
+import { Container, Content, Header, Image, H1, H2 } from './styles';
 
 export function Login() {
   return (
     <Container>
-      Login
-      <Card position='bottom'>test</Card>
+      <Header>
+        <Image src="public/assets/logo.png" />
+        <H1>Seja bem-vindo(a) ao Minha vez!</H1>
+      </Header>
+      <Card position="bottom">
+        <Content>
+          <H2>Para começar, insira o seu nome</H2>
+          {/* TODO - Add input here */}
+          <Button label="Acessar" onClick={() => {}} />
+          <Button label="Acessar" onClick={() => {}} />
+        </Content>
+      </Card>
     </Container>
   );
 }
 
 /*
 TO DO LIST
-- Create shared button component
-- Create shared card component
 - Create shared Typography component
 - Create input component
 */
