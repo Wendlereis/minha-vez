@@ -1,6 +1,10 @@
 :root {
   font-family: 'Instrument Sans', sans-serif;
 }
-body {
+body,
+h1,
+h2,
+h3,
+p {
   margin: 0;
 }
