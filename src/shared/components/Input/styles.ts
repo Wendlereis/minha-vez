@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import { theme } from '../../theme';
 
 export const StyledInput = styled.input`
-  padding: 24px 32px;
   background: ${theme.colors.background.sand};
   border: 1px solid ${theme.colors.primary};
   border-radius: 40px;
+  padding: 24px 32px;
   font-size: 20px;
   color: ${theme.colors.text.body};
 

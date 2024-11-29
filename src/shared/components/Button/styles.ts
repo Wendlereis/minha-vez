@@ -11,13 +11,12 @@ export const StyledButton = styled.button`
   font-weight: 600;
   cursor: pointer;
 
-  // TODO - add text variant
-  background: ${theme.colors.secondary};
+  background: ${theme.colors.secondary.dark};
   color: ${theme.colors.text.heading.light};
   border-radius: 40px;
   border-color: transparent;
 
   &:active {
-    background: #468beb;
+    background: ${theme.colors.secondary.light};
   }
 `;

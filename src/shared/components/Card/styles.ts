@@ -6,7 +6,6 @@ import { css } from '@emotion/react';
 export const StyledCard = styled.section<StyledCardProps>`
   padding: 72px 32px;
 
-  // TODO - Change this based on the variant
   background: ${theme.colors.background.light};
   box-shadow: ${theme.shadow};
 

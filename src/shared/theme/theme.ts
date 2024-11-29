@@ -2,7 +2,7 @@ export const theme = {
   shadow: '0px 1px 6px rgba(0, 0, 0, 0.25)',
   colors: {
     primary: '#F78710',
-    secondary: '#0863E3',
+    secondary: { dark: '#0863E3', light: '#468BEB' },
     text: {
       body: '#292825',
       heading: {
