@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { theme } from '../theme';
+import { theme } from '../../theme';
 
 export const StyledInput = styled.input`
   padding: 24px 32px;
@@ -21,11 +21,6 @@ export const Wrapper = styled.div`
   gap: 8px;
 `;
 
-export const Body2 = styled.p`
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: ${theme.colors.primary};
-  margin: 0;
-  margin-left: 30px;
+export const HelperWrapper = styled.div`
+  margin-left: 24px;
 `;

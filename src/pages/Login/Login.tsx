@@ -1,18 +1,33 @@
-import { Button } from '../../shared/Button';
-import { Card } from '../../shared/Card';
-import { Input } from '../../shared/Input';
-import { Container, Content, Header, Image, H1, H2 } from './styles';
+import { Button } from '../../shared/components/Button';
+import { Card } from '../../shared/components/Card';
+import { Input } from '../../shared/components/Input';
+import { Typography } from '../../shared/components/Typography';
+import { theme } from '../../shared/theme';
+
+import { Container, Content, Header, Image } from './styles';
 
 export function Login() {
   return (
     <Container>
       <Header>
         <Image src="public/assets/logo.png" />
-        <H1>Seja bem-vindo(a) ao Minha vez!</H1>
+        <Typography
+          variant="H1"
+          color={theme.colors.text.heading.light}
+          textAlign="center"
+        >
+          Seja bem-vindo(a) ao Minha vez!
+        </Typography>
       </Header>
       <Card position="bottom">
         <Content>
-          <H2>Para começar, insira o seu nome</H2>
+          <Typography
+            variant="H2"
+            color={theme.colors.text.heading.dark}
+            textAlign="center"
+          >
+            Para começar, insira o seu nome
+          </Typography>
           <Input
             placeholder="Nome"
             helper="Este será o nome que aparecerá na fila."
@@ -23,9 +38,3 @@ export function Login() {
     </Container>
   );
 }
-
-/*
-TO DO LIST
-- Create shared Typography component
-- Create input component
-*/

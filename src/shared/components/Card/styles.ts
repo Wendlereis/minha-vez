@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { StyledCardProps } from './types';
-import { theme } from '../theme';
+import { theme } from '../../theme';
 import { css } from '@emotion/react';
 
 export const StyledCard = styled.section<StyledCardProps>`
