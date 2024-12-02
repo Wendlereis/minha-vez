@@ -12,7 +12,7 @@ export const Content = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 56px;
+  gap: 48px;
 `;
 
 export const PreviewContainer = styled.div`
@@ -20,4 +20,14 @@ export const PreviewContainer = styled.div`
   flex-direction: column;
   gap: 32px;
   padding: 0 24px;
+`;
+
+export const Image = styled.img`
+  max-width: 380px;
+`;
+
+export const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 `;
