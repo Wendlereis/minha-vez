@@ -1,57 +1,27 @@
 import { useState } from 'react';
 
-import { io } from 'socket.io-client';
+import { Login } from './pages/Login';
+import { Lobby } from './pages/Lobby';
+import { QueuePreview } from './pages/QueuePreview';
+import { YourTurn } from './pages/YourTurn';
 
-const socket = io('http://localhost:3000');
+import { Pages } from './types';
 
 function App() {
-  const [user, setUser] = useState<string>();
-  const [players, setPlayers] = useState<string[]>();
-  const [playersInGame, setPlayersInGame] = useState<string[]>();
+  const [currentPage] = useState<Pages>('queue-preview');
 
-  socket.on('players-waiting', (data: string[]) => {
-    setPlayers(data);
-  });
-
-  socket.on('players-in-game', (data: string[]) => {
-    setPlayersInGame(data);
-  });
-
-  return (
-    <>
-      <input
-        type="text"
-        onChange={(event) => {
-          setUser(event.target.value);
-        }}
-      />
-      <button
-        onClick={() => {
-          socket.emit('join', { name: user });
-        }}
-      >
-        entrar na fila
-      </button>
-      <button
-        onClick={() => {
-          socket.emit('join-court', { name: user });
-        }}
-      >
-        entrar na quadra
-      </button>
-      <button
-        onClick={() => {
-          socket.emit('left-court', { name: user });
-        }}
-      >
-        sair da quadra
-      </button>
-      Fila da quadra
-      {JSON.stringify(players, null, 2)}
-      Galera jogando
-      {JSON.stringify(playersInGame, null, 2)}
-    </>
-  );
+  switch (currentPage) {
+    case 'login':
+      return <Login />;
+    case 'queue-preview':
+      return <QueuePreview />;
+    case 'lobby':
+      return <Lobby />;
+    case 'your-turn':
+      return <YourTurn />;
+    default:
+      return null;
+  }
 }
 
 export default App;
