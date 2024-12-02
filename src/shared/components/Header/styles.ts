@@ -5,7 +5,7 @@ export const Container = styled.header`
   flex-direction: column;
   align-items: center;
   padding: 32px 32px 40px;
-  gap: 40px;
+  gap: 24px;
   justify-content: space-between;
   height: 100%;
 `;
