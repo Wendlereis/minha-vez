@@ -8,15 +8,15 @@ import { YourTurn } from './pages/YourTurn';
 import { Pages } from './types';
 
 function App() {
-  const [currentPage] = useState<Pages>('queue-preview');
+  const [currentPage] = useState<Pages>('login');
 
   switch (currentPage) {
     case 'login':
       return <Login />;
-    case 'queue-preview':
-      return <QueuePreview />;
     case 'lobby':
       return <Lobby />;
+    case 'queue-preview':
+      return <QueuePreview />;
     case 'your-turn':
       return <YourTurn />;
     default:
