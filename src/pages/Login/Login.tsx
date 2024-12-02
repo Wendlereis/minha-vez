@@ -1,24 +1,16 @@
 import { Button } from '../../shared/components/Button';
 import { Card } from '../../shared/components/Card';
+import { Header } from '../../shared/components/Header';
 import { Input } from '../../shared/components/Input';
 import { Typography } from '../../shared/components/Typography';
 import { theme } from '../../shared/theme';
 
-import { Container, Content, Header, Image } from './styles';
+import { Container, Content } from './styles';
 
 export function Login() {
   return (
     <Container>
-      <Header>
-        <Image src="public/assets/logo.png" />
-        <Typography
-          variant="H1"
-          color={theme.colors.text.heading.light}
-          textAlign="center"
-        >
-          Seja bem-vindo(a) ao Minha vez!
-        </Typography>
-      </Header>
+      <Header title="Seja bem vindo(a) ao Minha vez!" />
       <Card position="bottom">
         <Content>
           <Typography

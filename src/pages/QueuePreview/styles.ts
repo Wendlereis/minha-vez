@@ -12,5 +12,12 @@ export const Content = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 72px;
+  gap: 56px;
+`;
+
+export const PreviewContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 0 24px;
 `;
