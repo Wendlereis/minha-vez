@@ -1,8 +1,8 @@
-import { Button } from '../../shared/components/Button';
-import { Card } from '../../shared/components/Card';
-import { Header } from '../../shared/components/Header';
-import { Typography } from '../../shared/components/Typography';
-import { theme } from '../../shared/theme';
+import { Button } from '@shared/components/Button';
+import { Card } from '@shared/components/Card';
+import { Header } from '@shared/components/Header';
+import { Typography } from '@shared/components/Typography';
+import { theme } from '@shared/theme';
 import { PreviewItem } from './components/PreviewItem';
 import {
   Container,

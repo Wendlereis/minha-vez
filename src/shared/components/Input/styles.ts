@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { theme } from '../../theme';
+import { theme } from '@shared/theme';
 
 export const StyledInput = styled.input`
   background: ${theme.colors.background.sand};

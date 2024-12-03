@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { StyledCardProps } from './types';
-import { theme } from '../../theme';
+import { theme } from '@shared/theme';
 
 export const StyledCard = styled.section<StyledCardProps>`
   padding: 72px 32px 56px;

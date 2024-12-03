@@ -1,5 +1,5 @@
-import { Typography } from '../../../../shared/components/Typography';
-import { theme } from '../../../../shared/theme';
+import { Typography } from '@shared/components/Typography';
+import { theme } from '@shared/theme';
 import { Circle, Content, Item } from './styles';
 import { PreviewItemProps } from './types';
 
