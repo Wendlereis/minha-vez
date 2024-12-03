@@ -8,7 +8,7 @@ import { YourTurn } from './pages/YourTurn';
 import { Pages } from './types';
 
 function App() {
-  const [currentPage] = useState<Pages>('login');
+  const [currentPage] = useState<Pages>('lobby');
 
   switch (currentPage) {
     case 'login':
