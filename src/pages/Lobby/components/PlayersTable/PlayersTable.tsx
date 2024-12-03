@@ -1,14 +1,14 @@
 import { Position, Row } from './styles';
 import { PlayersTableProps } from './types';
 
-export function PlayersTable({ players }: PlayersTableProps) {
-  function getPlayerNameItem(current: boolean, name: string) {
-    if (!current) {
-      return name;
-    }
-    return 'Você';
+function getPlayerNameItem(current: boolean, name: string) {
+  if (!current) {
+    return name;
   }
+  return 'Você';
+}
 
+export function PlayersTable({ players }: PlayersTableProps) {
   return (
     <table>
       <tbody>
