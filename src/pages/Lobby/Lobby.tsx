@@ -15,7 +15,7 @@ export function Lobby() {
       <Content>
         <Typography variant="H3" color={theme.colors.text.heading.dark}>
           Em espera
-        </Typography>{' '}
+        </Typography>
         <PlayersTable players={players} />
         {/* Leave Queue Action */}
       </Content>
