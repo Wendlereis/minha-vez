@@ -1,9 +1,9 @@
-import { Button } from '../../shared/components/Button';
-import { Card } from '../../shared/components/Card';
-import { Header } from '../../shared/components/Header';
-import { Input } from '../../shared/components/Input';
-import { Typography } from '../../shared/components/Typography';
-import { theme } from '../../shared/theme';
+import { Button } from '@shared/components/Button';
+import { Card } from '@shared/components/Card';
+import { Header } from '@shared/components/Header';
+import { Input } from '@shared/components/Input';
+import { Typography } from '@shared/components/Typography';
+import { theme } from '@shared/theme';
 
 import { Container, Content } from './styles';
 

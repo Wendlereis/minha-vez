@@ -25,6 +25,14 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
     },
+    settings: {
+      'import/resolver': {
+        alias: {
+          map: [['@shared', './src/shared']],
+          extensions: ['.ts', '.tsx'],
+        },
+      },
+    },
   },
   eslintPluginPrettierRecommended,
 );

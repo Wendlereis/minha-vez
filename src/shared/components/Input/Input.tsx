@@ -1,5 +1,5 @@
-import { theme } from '../../theme';
-import { Typography } from '../Typography/Typography';
+import { theme } from '@shared/theme';
+import { Typography } from '@shared/components/Typography';
 import { HelperWrapper, StyledInput, Wrapper } from './styles';
 import { InputProps } from './types';
 

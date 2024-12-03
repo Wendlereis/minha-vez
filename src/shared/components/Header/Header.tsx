@@ -1,5 +1,5 @@
-import { theme } from '../../theme';
-import { Typography } from '../Typography';
+import { theme } from '@shared/theme';
+import { Typography } from '@shared/components/Typography';
 import { Container, Image } from './styles';
 import { HeaderProps } from './types';
 

@@ -1,1 +1,1 @@
-export * from "./QueuePreview";
+export * from './QueuePreview';
