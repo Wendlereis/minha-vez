@@ -11,8 +11,13 @@ export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-self: baseline;
+  gap: 8px;
 `;
 
 export const Logo = styled.img`
   width: 130px;
+`;
+
+export const EmptyCourtImage = styled.img`
+  width: 110px;
 `;
