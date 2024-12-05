@@ -1,5 +1,7 @@
+import { Player } from '../QueueSection';
+
 export interface PlayersTableProps {
-  players: { name: string; current: boolean }[];
+  players: Player[];
 }
 
 export interface RowProps {
