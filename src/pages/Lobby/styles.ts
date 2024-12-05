@@ -22,3 +22,21 @@ export const TableWrapper = styled.div`
   flex-direction: column;
   gap: 40px;
 `;
+
+export const Header = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+`;
+
+export const HeaderTitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: baseline;
+  gap: 8px;
+`;
+
+export const Image = styled.img`
+  width: 130px;
+`;
