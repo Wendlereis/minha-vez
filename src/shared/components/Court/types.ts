@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface CourtProps {
-  players: { name: string }[];
+  children: ReactNode;
 }

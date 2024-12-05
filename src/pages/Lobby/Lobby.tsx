@@ -41,7 +41,11 @@ export function Lobby() {
             </Typography>
           </HeaderTitleWrapper>
           {courts.map((court) => (
-            <Court players={court} />
+            <Court>
+              {court.map(({ name }) => (
+                <Typography>{name}</Typography>
+              ))}
+            </Court>
           ))}
         </Header>
       </Card>
