@@ -14,17 +14,17 @@ export function Lobby() {
 
   const courts = [
     [
-      { name: 'Breno' },
-      { name: 'Ciclano' },
-      { name: 'Beltrano' },
-      { name: 'Fulano' },
+      { name: 'Breno', id: 'abc1' },
+      { name: 'Ciclano', id: 'abc2' },
+      { name: 'Beltrano', id: '1bcf' },
+      { name: 'Fulano', id: '124d' },
     ],
   ];
 
   return (
     <Container>
       <CourtsSection courts={courts} />
-      {/* TODO - Move this to be a section component too */}
+      {/* TODO - Move queue to be a section component too */}
       <Content>
         <TableWrapper>
           <Typography variant="H3" color={theme.colors.text.heading.dark}>
