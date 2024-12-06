@@ -16,10 +16,10 @@ export function CourtsSection({ courts }: CourtsSectionProps) {
             Em quadra
           </Typography>
         </TitleWrapper>
-        {courts.map((court) => (
-          <Court>
+        {courts.map((court, index) => (
+          <Court key={`court-${index}`}>
             {court.map(({ name }) => (
-              <Typography>{name}</Typography>
+              <Typography key={name}>{name}</Typography>
             ))}
           </Court>
         ))}
