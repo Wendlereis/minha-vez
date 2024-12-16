@@ -18,7 +18,7 @@ export function QueuePreview() {
   return (
     <Container>
       <Header title="Pronto para o aquecimento?" />
-      <Card position="bottom">
+      <Card variant="body">
         <Content>
           {isQueueEmpty ? (
             <>

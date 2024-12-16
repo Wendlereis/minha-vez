@@ -1,6 +1,14 @@
-import { StyledCard } from './styles';
+import { BodyCard, CourtCard, HeaderCard } from './styles';
 import { CardProps } from './types';
 
-export function Card({ position, children }: CardProps) {
-  return <StyledCard position={position}>{children}</StyledCard>;
+const cardVariants = {
+  body: BodyCard,
+  court: CourtCard,
+  header: HeaderCard,
+};
+
+export function Card({ variant, children }: CardProps) {
+  const Component = cardVariants[variant];
+
+  return <Component>{children}</Component>;
 }
