@@ -12,7 +12,7 @@ export function CourtsSection({ courts }: CourtsSectionProps) {
   const hasEmptyState = fullCourts.length === 0;
 
   return (
-    <Card position="top">
+    <Card variant="header">
       <Content>
         <Logo src="public/assets/logo.png" alt="Minha Vez logo" />
         <TitleWrapper>

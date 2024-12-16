@@ -11,7 +11,7 @@ export function Login() {
   return (
     <Container>
       <Header title="Seja bem vindo(a) ao Minha vez!" />
-      <Card position="bottom">
+      <Card variant="body">
         <Content>
           <Typography
             variant="H2"
