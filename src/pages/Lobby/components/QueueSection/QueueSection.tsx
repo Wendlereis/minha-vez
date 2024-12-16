@@ -1,7 +1,7 @@
 import { theme } from '@shared/theme';
 import { Button } from '@shared/components/Button';
 
-import { PlayersTable } from '../PlayersTable';
+import { PlayersTable } from './PlayersTable';
 import { Content, TitleWrapper } from './styles';
 import { QueueSectionProps } from './types';
 import { QueueDisclaimer } from './QueueDisclaimer';

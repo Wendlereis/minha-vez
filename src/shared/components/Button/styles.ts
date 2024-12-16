@@ -7,7 +7,6 @@ export const StyledButton = styled.button<StyledButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 32px;
   font-size: 24px;
   font-weight: 600;
   cursor: pointer;
@@ -20,6 +19,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
           align-self: center;
           color: ${theme.colors.primary};
           background: none;
+          padding: 4px;
 
           &:active {
             color: ${theme.colors.background.sand};
@@ -30,6 +30,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
           background: ${theme.colors.secondary.dark};
           color: ${theme.colors.text.heading.light};
           border-radius: 40px;
+          padding: 16px 32px;
 
           &:active {
             background: ${theme.colors.secondary.light};
