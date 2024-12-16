@@ -5,6 +5,7 @@ export interface TypographyProps {
   color?: string;
   variant?: Variant;
   textAlign?: string;
+  className?: string;
 }
 
 export type StyledTypographyProps = Omit<

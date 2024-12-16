@@ -7,7 +7,10 @@ export function Lobby() {
     { name: 'Fulano', id: '123' },
     { name: 'Ciclano', id: '1234' },
     { name: 'Beltrano', id: '1923' },
+    { name: 'Amigo', id: '1913' },
   ];
+
+  const nextGameDate = '2024-12-16T16:00:00.000Z';
 
   const courts = [
     [
@@ -21,7 +24,7 @@ export function Lobby() {
   return (
     <Container>
       <CourtsSection courts={courts} />
-      <QueueSection players={playersInQueue} />
+      <QueueSection players={playersInQueue} nextGameDate={nextGameDate} />
     </Container>
   );
 }
