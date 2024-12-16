@@ -15,12 +15,11 @@ export function Typography({
   color = theme.colors.text.body,
   variant = 'Body1',
   textAlign = 'left',
-  className,
 }: TypographyProps) {
   const Component = typographyVariants[variant];
 
   return (
-    <Component className={className} color={color} textAlign={textAlign}>
+    <Component color={color} textAlign={textAlign}>
       {children}
     </Component>
   );
