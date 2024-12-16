@@ -1,16 +1,27 @@
 import { Container } from './styles';
 import { QueueSection } from './components/QueueSection/QueueSection';
+import { CourtsSection } from './components/CourtsSection';
 
 export function Lobby() {
-  const players = [
+  const playersInQueue = [
     { name: 'Fulano', id: '123' },
     { name: 'Ciclano', id: '1234' },
     { name: 'Beltrano', id: '1923' },
   ];
+
+  const courts = [
+    [
+      { name: 'Breno', id: 'abc1' },
+      { name: 'Ciclano', id: 'abc2' },
+      { name: 'Beltrano', id: '1bcf' },
+      { name: 'Fulano', id: '124d' },
+    ],
+  ];
+
   return (
     <Container>
-      {/* Court Card */}
-      <QueueSection players={players} />
+      <CourtsSection courts={courts} />
+      <QueueSection players={playersInQueue} />
     </Container>
   );
 }

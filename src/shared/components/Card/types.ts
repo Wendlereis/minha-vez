@@ -1,8 +1,6 @@
-export type Position = 'top' | 'bottom';
+export type Variant = 'header' | 'body' | 'court';
 
 export interface CardProps {
-  position: Position;
+  variant: Variant;
   children: React.ReactNode;
 }
-
-export type StyledCardProps = Omit<CardProps, 'children'>;
