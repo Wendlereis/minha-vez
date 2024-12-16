@@ -13,12 +13,13 @@ export function Lobby() {
   ];
 
   const courts = [
-    [
-      { name: 'Breno', id: 'abc1' },
-      { name: 'Ciclano', id: 'abc2' },
-      { name: 'Beltrano', id: '1bcf' },
-      { name: 'Fulano', id: '124d' },
-    ],
+    [],
+    // [
+    //   { name: 'Breno', id: 'abc1' },
+    //   { name: 'Ciclano', id: 'abc2' },
+    //   { name: 'Beltrano', id: '1bcf' },
+    //   { name: 'Fulano', id: '124d' },
+    // ],
   ];
 
   return (
