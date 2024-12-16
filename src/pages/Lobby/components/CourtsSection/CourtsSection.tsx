@@ -32,9 +32,9 @@ export function CourtsSection({ courts }: CourtsSectionProps) {
           </Court>
         ) : (
           fullCourts.map((court) => (
-            <Court>
+            <Court key={court[0].id}>
               {court.map((player) => (
-                <Typography>{player.name}</Typography>
+                <Typography key={player.id}>{player.name}</Typography>
               ))}
             </Court>
           ))
