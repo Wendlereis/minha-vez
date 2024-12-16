@@ -1,15 +1,12 @@
-import { Button } from '@shared/components/Button';
-import { Typography } from '@shared/components/Typography';
-import { theme } from '@shared/theme';
-import { PlayersTable } from './components/PlayersTable';
-import { Container, Content, TableWrapper } from './styles';
+import { Container } from './styles';
+import { QueueSection } from './components/QueueSection/QueueSection';
 import { CourtsSection } from './components/CourtsSection';
 
 export function Lobby() {
   const playersInQueue = [
-    { name: 'Fulano ', current: false },
-    { name: 'Ciclano', current: false },
-    { name: 'Beltrano', current: true },
+    { name: 'Fulano', id: '123' },
+    { name: 'Ciclano', id: '1234' },
+    { name: 'Beltrano', id: '1923' },
   ];
 
   const courts = [
@@ -25,18 +22,7 @@ export function Lobby() {
   return (
     <Container>
       <CourtsSection courts={courts} />
-      {/* TODO - Move queue to be a section component too */}
-      <Content>
-        <TableWrapper>
-          <Typography variant="H3" color={theme.colors.text.heading.dark}>
-            Em espera
-          </Typography>
-          {/* Lobby description */}
-
-          <PlayersTable players={playersInQueue} />
-        </TableWrapper>
-        <Button label="Sair da fila" onClick={() => {}} variant="text" />
-      </Content>
+      <QueueSection players={playersInQueue} />
     </Container>
   );
 }
