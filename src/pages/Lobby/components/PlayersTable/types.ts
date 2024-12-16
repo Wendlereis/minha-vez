@@ -1,4 +1,4 @@
-import { Player } from '../QueueSection';
+import { Player } from '@shared/types';
 
 export interface PlayersTableProps {
   players: Player[];

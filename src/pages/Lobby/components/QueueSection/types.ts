@@ -1,4 +1,4 @@
-export type Player = { name: string; id: string };
+import { Player } from '@shared/types';
 
 export interface QueueSectionProps {
   players: Player[];
