@@ -2,7 +2,7 @@ import { theme } from '@shared/theme';
 import { Typography } from '@shared/components/Typography';
 import { Button } from '@shared/components/Button';
 
-import { PlayersTable } from '../PlayersTable';
+import { PlayersTable } from './PlayersTable';
 import { Content, TableWrapper } from './styles';
 import { QueueSectionProps } from './types';
 
