@@ -30,7 +30,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
           background: ${theme.colors.secondary.dark};
           color: ${theme.colors.text.heading.light};
           border-radius: 40px;
-          padding: 16px 32px;
+          padding: 24px 32px;
 
           &:active {
             background: ${theme.colors.secondary.light};
