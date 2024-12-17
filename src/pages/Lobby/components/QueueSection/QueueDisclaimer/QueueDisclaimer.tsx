@@ -5,11 +5,10 @@ import { QueueDisclaimerProps } from './types';
 function getWaitingTime(nextGameDate: string) {
   const futureDate = DateTime.fromISO(nextGameDate);
 
-  const now = DateTime.utc();
-
-  const diffInMinutes = futureDate.diff(now).milliseconds / 60000;
-
-  return Math.ceil(diffInMinutes);
+  return futureDate.toRelative({
+    unit: ['hours', 'minutes'],
+    locale: 'pt-BR',
+  });
 }
 
 export function QueueDisclaimer({
@@ -24,10 +23,12 @@ export function QueueDisclaimer({
     );
   }
 
+  const waitingTime = getWaitingTime(nextGameDate);
+
   return (
     <Typography>
-      O tempo estimado de espera até o seu próximo jogo é de
-      <strong> {getWaitingTime(nextGameDate)} minutos</strong>.
+      Seu próximo jogo está previsto para começar
+      <strong> {waitingTime}</strong>.
     </Typography>
   );
 }
