@@ -1,22 +1,29 @@
 import { theme } from '@shared/theme';
-import { Typography } from '@shared/components/Typography';
 import { Button } from '@shared/components/Button';
 
 import { PlayersTable } from './PlayersTable';
-import { Content, TableWrapper } from './styles';
+import { Content, TitleWrapper } from './styles';
 import { QueueSectionProps } from './types';
+import { QueueDisclaimer } from './QueueDisclaimer';
+import { Typography } from '@shared/components/Typography';
 
-export function QueueSection({ players }: QueueSectionProps) {
+export function QueueSection({ players, nextGameDate }: QueueSectionProps) {
+  const hasEnoughPlayers = players.length >= 4;
+
   return (
     <Content>
-      <TableWrapper>
+      <TitleWrapper>
         <Typography variant="H3" color={theme.colors.text.heading.dark}>
           Em espera
         </Typography>
-        {/* Lobby description */}
+        <QueueDisclaimer
+          hasEnoughPlayers={hasEnoughPlayers}
+          nextGameDate={nextGameDate}
+        />
+      </TitleWrapper>
 
-        <PlayersTable players={players} />
-      </TableWrapper>
+      <PlayersTable players={players} />
+
       <Button label="Sair da fila" onClick={() => {}} variant="text" />
     </Content>
   );

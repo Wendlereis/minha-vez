@@ -5,12 +5,15 @@ export const Content = styled.section`
   flex-direction: column;
   padding: 32px 32px 56px;
   gap: 40px;
-  justify-content: space-between;
   flex-grow: 1;
+
+  button {
+    margin-top: auto;
+  }
 `;
 
-export const TableWrapper = styled.div`
+export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 16px;
 `;
