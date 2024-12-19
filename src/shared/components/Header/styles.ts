@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Typography } from '@shared/components/Typography';
 
 export const Container = styled.header`
   display: flex;
@@ -12,4 +13,8 @@ export const Container = styled.header`
 
 export const Image = styled.img`
   width: 130px;
+`;
+
+export const Title = styled(Typography)`
+  text-align: center;
 `;

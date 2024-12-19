@@ -2,10 +2,8 @@ import { Button } from '@shared/components/Button';
 import { Card } from '@shared/components/Card';
 import { Header } from '@shared/components/Header';
 import { Input } from '@shared/components/Input';
-import { Typography } from '@shared/components/Typography';
-import { theme } from '@shared/theme';
 
-import { Container, Content } from './styles';
+import { Container, Content, Title } from './styles';
 
 export function Login() {
   return (
@@ -13,13 +11,9 @@ export function Login() {
       <Header title="Seja bem vindo(a) ao Minha vez!" />
       <Card variant="body">
         <Content>
-          <Typography
-            variant="H2"
-            color={theme.colors.text.heading.dark}
-            textAlign="center"
-          >
+          <Title variant="h2" color="text.heading.dark">
             Para começar, insira o seu nome
-          </Typography>
+          </Title>
           <Input
             placeholder="Nome"
             helper="Este será o nome que aparecerá na fila."

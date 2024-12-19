@@ -1,7 +1,6 @@
 import { Card } from '@shared/components/Card';
 import { Court } from '@shared/components/Court';
 import { Typography } from '@shared/components/Typography';
-import { theme } from '@shared/theme';
 
 import { Logo, TitleWrapper, EmptyCourtImage, Content } from './styles';
 import { CourtsSectionProps } from './types';
@@ -16,7 +15,7 @@ export function CourtsSection({ courts }: CourtsSectionProps) {
       <Content>
         <Logo src="public/assets/logo.png" alt="Minha Vez logo" />
         <TitleWrapper>
-          <Typography variant="H3" color={theme.colors.text.heading.dark}>
+          <Typography variant="h3" color="text.heading.dark">
             Em quadra
           </Typography>
           {hasEmptyState && (

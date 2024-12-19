@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Typography } from '@shared/components/Typography';
 import { theme } from '@shared/theme';
 
 export const Container = styled.div`
@@ -30,4 +31,8 @@ export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+`;
+
+export const CenteredText = styled(Typography)`
+  text-align: center;
 `;

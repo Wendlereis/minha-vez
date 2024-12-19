@@ -1,10 +1,9 @@
 import { Button } from '@shared/components/Button';
 import { Card } from '@shared/components/Card';
 import { Header } from '@shared/components/Header';
-import { Typography } from '@shared/components/Typography';
-import { theme } from '@shared/theme';
 import { PreviewItem } from './components/PreviewItem';
 import {
+  CenteredText,
   Container,
   Content,
   PreviewContainer,
@@ -23,17 +22,13 @@ export function QueuePreview() {
           {isQueueEmpty ? (
             <>
               <TitleWrapper>
-                <Typography
-                  variant="H2"
-                  color={theme.colors.text.heading.dark}
-                  textAlign="center"
-                >
+                <CenteredText variant="h2" color="text.heading.dark">
                   Você estará na primeira posição da fila!
-                </Typography>
-                <Typography textAlign="center">
+                </CenteredText>
+                <CenteredText>
                   Entre agora e aguarde outros jogadores para formar o próximo
                   grupo.
-                </Typography>
+                </CenteredText>
               </TitleWrapper>
               <Image
                 src="public/assets/girls-playing-beach-tennis.png"
@@ -42,13 +37,9 @@ export function QueuePreview() {
             </>
           ) : (
             <>
-              <Typography
-                variant="H2"
-                color={theme.colors.text.heading.dark}
-                textAlign="center"
-              >
+              <CenteredText variant="h2" color="text.heading.dark">
                 Garanta agora seu lugar na fila
-              </Typography>
+              </CenteredText>
               <PreviewContainer>
                 <PreviewItem
                   number={45}
