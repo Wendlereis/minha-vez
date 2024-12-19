@@ -1,10 +1,11 @@
 import { theme } from '../../theme';
-import { Body1, Body2, H1, H2, H3 } from './styles';
+import { Body1, Body2, Display, H1, H2, H3 } from './styles';
 import { TypographyProps } from './types';
 
 const typographyVariants = {
   Body1: Body1,
   Body2: Body2,
+  Display: Display,
   H1: H1,
   H2: H2,
   H3: H3,
