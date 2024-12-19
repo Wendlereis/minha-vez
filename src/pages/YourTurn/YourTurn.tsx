@@ -3,7 +3,6 @@ import confetti from 'canvas-confetti';
 
 import { Typography } from '@shared/components/Typography';
 import { Court } from '@shared/components/Court';
-import { theme } from '@shared/theme';
 
 import { Actions } from './components/Actions';
 import { Container, Content, CourtWrapper, Image } from './styles';
@@ -44,11 +43,11 @@ export function YourTurn() {
           src="public/assets/friends-playing-volley-ball.png"
           alt="Amigos jogando vôlei"
         />
-        <Typography variant="Display" color={theme.colors.secondary.dark}>
+        <Typography variant="display" color="secondary.dark">
           É a sua vez!
         </Typography>
         <CourtWrapper>
-          <Typography variant="H3" color={theme.colors.text.heading.dark}>
+          <Typography variant="h3" color="text.heading.dark">
             Você vai jogar com
           </Typography>
           <Court>

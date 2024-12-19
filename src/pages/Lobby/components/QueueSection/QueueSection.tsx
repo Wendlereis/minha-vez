@@ -1,4 +1,3 @@
-import { theme } from '@shared/theme';
 import { Button } from '@shared/components/Button';
 
 import { PlayersTable } from './PlayersTable';
@@ -13,7 +12,7 @@ export function QueueSection({ players, nextGameDate }: QueueSectionProps) {
   return (
     <Content>
       <TitleWrapper>
-        <Typography variant="H3" color={theme.colors.text.heading.dark}>
+        <Typography variant="h3" color="text.heading.dark">
           Em espera
         </Typography>
         <QueueDisclaimer

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Typography } from '@shared/components/Typography';
 import { theme } from '@shared/theme';
 
 export const Container = styled.div`
@@ -13,4 +14,8 @@ export const Content = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 72px;
+`;
+
+export const Title = styled(Typography)`
+  text-align: center;
 `;

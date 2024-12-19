@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Typography } from '@shared/components/Typography';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -9,4 +10,8 @@ export const Wrapper = styled.section`
 
 export const GameStartedWrapper = styled(Wrapper)`
   gap: 8px;
+`;
+
+export const CenteredText = styled(Typography)`
+  text-align: center;
 `;

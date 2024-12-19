@@ -1,7 +1,6 @@
 import { Button } from '@shared/components/Button';
-import { GameStartedWrapper, Wrapper } from './styles';
+import { CenteredText, GameStartedWrapper, Wrapper } from './styles';
 import { useState } from 'react';
-import { Typography } from '@shared/components/Typography';
 
 export function Actions() {
   const [gameStarted, setGameStarted] = useState(false);
@@ -23,13 +22,13 @@ export function Actions() {
     <GameStartedWrapper>
       <Button label="Finalizar partida" onClick={() => {}} />
       <div>
-        <Typography variant="Body2" textAlign="center">
+        <CenteredText variant="body2">
           Finalize a partida ao sair da quadra para dar lugar aos próximos
           atletas.
-        </Typography>
-        <Typography variant="Body2" textAlign="center">
+        </CenteredText>
+        <CenteredText variant="body2">
           Você voltará automaticamente para o fim da fila.
-        </Typography>
+        </CenteredText>
       </div>
     </GameStartedWrapper>
   );

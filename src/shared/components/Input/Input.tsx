@@ -1,4 +1,3 @@
-import { theme } from '@shared/theme';
 import { Typography } from '@shared/components/Typography';
 import { HelperWrapper, StyledInput, Wrapper } from './styles';
 import { InputProps } from './types';
@@ -8,7 +7,7 @@ export function Input({ placeholder, helper }: InputProps) {
     <Wrapper>
       <StyledInput placeholder={placeholder} />
       <HelperWrapper>
-        <Typography variant="Body2" color={theme.colors.primary}>
+        <Typography variant="body2" color="primary">
           {helper}
         </Typography>
       </HelperWrapper>
