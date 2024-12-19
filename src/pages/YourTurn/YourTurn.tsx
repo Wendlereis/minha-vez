@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import confetti from 'canvas-confetti';
 
-import { Button } from '@shared/components/Button';
 import { Typography } from '@shared/components/Typography';
 import { Court } from '@shared/components/Court';
 
-import { Actions, Container, Content, CourtWrapper, Image } from './styles';
+import { Actions } from './components/Actions';
+import { Container, Content, CourtWrapper, Image } from './styles';
 
 function buildConfetti() {
   const commonFields = {
@@ -43,7 +43,7 @@ export function YourTurn() {
           src="public/assets/friends-playing-volley-ball.png"
           alt="Amigos jogando vôlei"
         />
-        <Typography variant="h1" color="secondary.dark">
+        <Typography variant="display" color="secondary.dark">
           É a sua vez!
         </Typography>
         <CourtWrapper>
@@ -57,10 +57,7 @@ export function YourTurn() {
           </Court>
         </CourtWrapper>
       </Content>
-      <Actions>
-        <Button label="Entrar em quadra" onClick={() => {}} />
-        <Button label="Voltar para a fila" onClick={() => {}} variant="text" />
-      </Actions>
+      <Actions />
     </Container>
   );
 }

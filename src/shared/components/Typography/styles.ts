@@ -8,6 +8,12 @@ function getPropertiesFromExternal(color: StyledTypographyProps['color']) {
   `;
 }
 
+export const Display = styled.h1<StyledTypographyProps>`
+  font-size: 48px;
+  font-weight: 600;
+  ${({ color }) => getPropertiesFromExternal(color)}
+`;
+
 export const H1 = styled.h1<StyledTypographyProps>`
   font-size: 40px;
   font-weight: 600;

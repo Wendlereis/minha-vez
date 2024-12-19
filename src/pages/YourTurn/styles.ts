@@ -15,13 +15,6 @@ export const Image = styled.img`
   width: 160px;
 `;
 
-export const Actions = styled.section`
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  width: 100%;
-`;
-
 export const Content = styled.section`
   display: flex;
   flex-direction: column;
