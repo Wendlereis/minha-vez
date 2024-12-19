@@ -12,10 +12,15 @@ function getPropertiesFromExternal(
   `;
 }
 
+export const Display = styled.h1<StyledTypographyProps>`
+  font-size: 48px;
+  font-weight: 600;
+  ${({ color, textAlign }) => getPropertiesFromExternal(color, textAlign)}
+`;
+
 export const H1 = styled.h1<StyledTypographyProps>`
   font-size: 40px;
   font-weight: 600;
-  margin: 0;
   ${({ color, textAlign }) => getPropertiesFromExternal(color, textAlign)}
 `;
 

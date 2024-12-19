@@ -1,4 +1,4 @@
-export type Variant = 'H1' | 'H2' | 'H3' | 'Body1' | 'Body2';
+export type Variant = 'Display' | 'H1' | 'H2' | 'H3' | 'Body1' | 'Body2';
 
 export interface TypographyProps {
   children: React.ReactNode;
