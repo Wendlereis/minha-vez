@@ -3,17 +3,9 @@ import { Actions, Content, TitleWrapper, Wrapper } from './styles';
 import { Typography } from '@shared/components/Typography';
 import { Button } from '@shared/components/Button';
 import { useEffect } from 'react';
-import { ButtonProps } from '@shared/components/Button/types';
+import { DialogProps } from './types';
 
-export function Dialog({
-  title,
-  subtitle,
-  actions,
-}: {
-  title: string;
-  subtitle: string;
-  actions: ButtonProps[];
-}) {
+export function Dialog({ title, subtitle, actions }: DialogProps) {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
