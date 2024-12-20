@@ -5,9 +5,21 @@ import { Content, TitleWrapper } from './styles';
 import { QueueSectionProps } from './types';
 import { QueueDisclaimer } from './QueueDisclaimer';
 import { Typography } from '@shared/components/Typography';
+import { useState } from 'react';
+import { ConfirmationDialog } from './PlayersTable/ConfirmationDialog/ConfirmationDialog';
 
 export function QueueSection({ players, nextGameDate }: QueueSectionProps) {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   const hasEnoughPlayers = players.length >= 4;
+
+  function onLeaveQueue() {
+    setIsDialogOpen(true);
+  }
+
+  function onCloseDialog() {
+    setIsDialogOpen(false);
+  }
 
   return (
     <Content>
@@ -23,7 +35,9 @@ export function QueueSection({ players, nextGameDate }: QueueSectionProps) {
 
       <PlayersTable players={players} />
 
-      <Button label="Sair da fila" onClick={() => {}} variant="text" />
+      <Button label="Sair da fila" onClick={onLeaveQueue} variant="text" />
+
+      <ConfirmationDialog isOpen={isDialogOpen} onClose={onCloseDialog} />
     </Content>
   );
 }
