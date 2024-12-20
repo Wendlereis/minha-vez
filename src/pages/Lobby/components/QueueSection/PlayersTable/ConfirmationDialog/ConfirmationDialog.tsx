@@ -1,6 +1,5 @@
 import { Card } from '@shared/components/Card';
 import { Actions, Content, TitleWrapper, Wrapper } from './styles';
-import { useEffect } from 'react';
 import { Typography } from '@shared/components/Typography';
 import { Button } from '@shared/components/Button';
 
@@ -11,20 +10,20 @@ export function ConfirmationDialog({
   isOpen: boolean;
   onClose: () => void;
 }) {
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
+  function onLeave() {
+    onClose();
+  }
+
+  function onCancel() {
+    onClose();
+  }
 
   if (!isOpen) {
+    document.body.style.overflow = '';
     return null;
   }
+
+  document.body.style.overflow = 'hidden';
 
   return (
     <Wrapper>
@@ -40,8 +39,8 @@ export function ConfirmationDialog({
             </Typography>
           </TitleWrapper>
           <Actions>
-            <Button onClick={onClose} label="Sair da fila" />
-            <Button onClick={onClose} variant="text" label="Voltar" />
+            <Button onClick={onLeave} label="Sair da fila" />
+            <Button onClick={onCancel} variant="text" label="Voltar" />
           </Actions>
         </Content>
       </Card>
