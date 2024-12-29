@@ -40,8 +40,8 @@ export function YourTurn() {
     <Container>
       <Content>
         <Image
-          src="public/assets/friends-playing-volley-ball.png"
-          alt="Amigos jogando vôlei"
+          src="assets/athletes-playing-beach-tennis.webp"
+          alt="Atletas jogando beach tennis"
         />
         <Typography variant="display" color="secondary.dark">
           É a sua vez!

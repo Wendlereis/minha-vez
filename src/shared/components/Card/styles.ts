@@ -5,7 +5,7 @@ export const BodyCard = styled.section`
   box-shadow: ${theme.shadow};
   background: ${theme.colors.background.light};
   border-radius: 40px 40px 0px 0px;
-  padding: 72px 32px 56px;
+  padding: 48px 32px 56px;
 `;
 
 export const CourtCard = styled.section`

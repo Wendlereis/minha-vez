@@ -12,7 +12,7 @@ export const Container = styled.header`
 `;
 
 export const Image = styled.img`
-  width: 130px;
+  width: 120px;
 `;
 
 export const Title = styled(Typography)`
