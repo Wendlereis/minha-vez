@@ -6,9 +6,9 @@ import {
   CenteredText,
   Container,
   Content,
-  PreviewContainer,
+  EmptyStateWrapper,
   Image,
-  TitleWrapper,
+  PreviewContainer,
 } from './styles';
 
 export function QueuePreview() {
@@ -21,7 +21,11 @@ export function QueuePreview() {
         <Content>
           {isQueueEmpty ? (
             <>
-              <TitleWrapper>
+              <EmptyStateWrapper>
+                <Image
+                  src="assets/athletes-stretching.webp"
+                  alt="Atletas alongando"
+                />
                 <CenteredText variant="h2" color="text.heading.dark">
                   Você estará na primeira posição da fila!
                 </CenteredText>
@@ -29,11 +33,7 @@ export function QueuePreview() {
                   Entre agora e aguarde outros jogadores para formar o próximo
                   grupo.
                 </CenteredText>
-              </TitleWrapper>
-              <Image
-                src="public/assets/girls-playing-beach-tennis.png"
-                alt="Garotas jogando Beach Tennis"
-              />
+              </EmptyStateWrapper>
             </>
           ) : (
             <>

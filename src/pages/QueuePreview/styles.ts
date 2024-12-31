@@ -24,13 +24,14 @@ export const PreviewContainer = styled.div`
 `;
 
 export const Image = styled.img`
-  max-width: 380px;
+  width: 300px;
 `;
 
-export const TitleWrapper = styled.div`
+export const EmptyStateWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  align-items: center;
+  gap: 16px;
 `;
 
 export const CenteredText = styled(Typography)`

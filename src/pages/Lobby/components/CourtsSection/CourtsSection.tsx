@@ -13,7 +13,7 @@ export function CourtsSection({ courts }: CourtsSectionProps) {
   return (
     <Card variant="header">
       <Content>
-        <Logo src="public/assets/logo.png" alt="Minha Vez logo" />
+        <Logo src="assets/logo.png" alt="Minha Vez logo" />
         <TitleWrapper>
           <Typography variant="h3" color="text.heading.dark">
             Em quadra
@@ -25,8 +25,8 @@ export function CourtsSection({ courts }: CourtsSectionProps) {
         {hasEmptyState ? (
           <Court>
             <EmptyCourtImage
-              src="public/assets/girl-playing-with-dog.png"
-              alt="Garota brincando com cachorro"
+              src="assets/sports-equipment-backpack.webp"
+              alt="Mochila com equipamentos de esporte"
             />
           </Court>
         ) : (

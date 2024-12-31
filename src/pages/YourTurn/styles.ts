@@ -7,12 +7,12 @@ export const Container = styled.div`
   justify-content: space-between;
   background: ${theme.colors.background.light};
   min-height: 100vh;
-  padding: 48px 32px;
+  padding: 56px 32px 48px;
   gap: 52px;
 `;
 
 export const Image = styled.img`
-  width: 160px;
+  width: 320px;
 `;
 
 export const Content = styled.section`
