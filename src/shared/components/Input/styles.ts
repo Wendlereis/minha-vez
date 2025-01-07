@@ -15,7 +15,7 @@ export const StyledInput = styled.input`
   }
 
   &:focus {
-    outline: 1px solid ${theme.colors.secondary.light};
+    outline: 1px solid ${theme.colors.text.heading.dark};
   }
 `;
 
