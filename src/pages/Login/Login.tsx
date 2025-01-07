@@ -14,7 +14,7 @@ export function Login() {
           <Title variant="h2" color="text.heading.dark">
             Para começar, insira o seu nome
           </Title>
-          <Input placeholder="Seu nome" label="Nome" />
+          <Input placeholder="Seu nome" label="Nome" name="name" />
           <Button label="Acessar" onClick={() => {}} />
         </Content>
       </Card>
