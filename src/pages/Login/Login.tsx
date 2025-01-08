@@ -15,7 +15,7 @@ export function Login() {
 
     const data = Object.fromEntries(formData.entries());
 
-    // TODO - proper handle form data
+    // TODO - properly handle form data
     console.log(data);
   };
   return (
@@ -30,7 +30,7 @@ export function Login() {
             <Input placeholder="Seu nome" label="Nome" name="name" />
             <GenderSelector />
           </InputsWrapper>
-          <Button label="Acessar" onClick={() => {}} type="submit" />
+          <Button label="Acessar" type="submit" />
         </Form>
       </Card>
     </Container>
