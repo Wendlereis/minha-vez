@@ -1,4 +1,6 @@
 export interface InputProps {
   placeholder: string;
-  helper: string;
+  label: string;
+  helper?: string;
+  name: string;
 }
