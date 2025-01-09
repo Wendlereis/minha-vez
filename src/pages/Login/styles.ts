@@ -9,11 +9,18 @@ export const Container = styled.div`
   height: 100vh;
 `;
 
-export const Content = styled.section`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 72px;
+  gap: 48px;
+`;
+
+export const InputsWrapper = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 `;
 
 export const Title = styled(Typography)`
