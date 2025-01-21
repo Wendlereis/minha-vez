@@ -8,5 +8,3 @@ export interface GenderIconProps {
 }
 
 export type IconProps = Pick<GenderIconProps, 'size'>;
-
-export type ImageAttributes = Record<Gender, { src: string; alt: string }>;

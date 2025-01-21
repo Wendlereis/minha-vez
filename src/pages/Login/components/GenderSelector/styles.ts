@@ -7,10 +7,6 @@ export const Label = styled(Typography)`
   font-weight: 600;
 `;
 
-export const Icon = styled.img`
-  width: 32px;
-`;
-
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
