@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
+import { Player } from '@shared/types';
 
 export interface CourtProps {
-  children: ReactNode;
+  court?: Player[];
 }

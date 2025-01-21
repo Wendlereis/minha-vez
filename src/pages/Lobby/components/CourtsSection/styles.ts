@@ -17,7 +17,3 @@ export const TitleWrapper = styled.div`
 export const Logo = styled.img`
   width: 120px;
 `;
-
-export const EmptyCourtImage = styled.img`
-  width: 160px;
-`;

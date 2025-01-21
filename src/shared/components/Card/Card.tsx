@@ -8,8 +8,8 @@ const cardVariants = {
   dialog: DialogCard,
 };
 
-export function Card({ variant, children }: CardProps) {
+export function Card({ variant, children, className }: CardProps) {
   const Component = cardVariants[variant];
 
-  return <Component>{children}</Component>;
+  return <Component className={className}>{children}</Component>;
 }

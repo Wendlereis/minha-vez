@@ -13,6 +13,7 @@ export const CourtCard = styled.section`
   border-radius: 30px;
   width: 200px;
   height: 130px;
+  padding: 0 16px;
 `;
 
 export const HeaderCard = styled.header`
