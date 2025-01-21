@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Icon, Input, Label, Option, OptionsWrapper, Wrapper } from './styles';
+import { Input, Label, Option, OptionsWrapper, Wrapper } from './styles';
+import { GenderIcon } from '@shared/components/GenderIcon/GenderIcon';
 
 export function GenderSelector() {
   const [gender, setGender] = useState<string>();
@@ -16,7 +17,7 @@ export function GenderSelector() {
           onChange={(e) => setGender(e.target.value)}
         />
         <Option htmlFor="female" selected={gender === 'female'} tabIndex={0}>
-          <Icon src="assets/icons/female.png" alt="símbolo feminino" />
+          <GenderIcon gender="female" size="large" />
           Feminino
         </Option>
         <Input
@@ -27,7 +28,7 @@ export function GenderSelector() {
           onChange={(e) => setGender(e.target.value)}
         />
         <Option htmlFor="male" selected={gender === 'male'} tabIndex={0}>
-          <Icon src="assets/icons/male.png" alt="símbolo masculino" />
+          <GenderIcon gender="male" size="large" />
           Masculino
         </Option>
       </OptionsWrapper>
