@@ -1,4 +1,5 @@
-import { Position, Row } from './styles';
+import { GenderIcon } from '@shared/components/GenderIcon';
+import { Player, Position, Row } from './styles';
 import { PlayersTableProps } from './types';
 
 export function PlayersTable({ players }: PlayersTableProps) {
@@ -7,13 +8,20 @@ export function PlayersTable({ players }: PlayersTableProps) {
   return (
     <table>
       <tbody>
-        {players.map((player, index) => {
-          const isCurrentUser = player.id === currentUserId;
+        {players.map(({ id, name, gender }, index) => {
+          const isCurrentUser = id === currentUserId;
 
           return (
-            <Row isCurrent={isCurrentUser} key={player.id}>
+            <Row isCurrent={isCurrentUser} key={id}>
               <Position>{index + 1}.</Position>
-              <td>{isCurrentUser ? 'Você' : player.name}</td>
+              {isCurrentUser ? (
+                <Player>Você</Player>
+              ) : (
+                <Player>
+                  {name}
+                  <GenderIcon gender={gender} size="small" />
+                </Player>
+              )}
             </Row>
           );
         })}
