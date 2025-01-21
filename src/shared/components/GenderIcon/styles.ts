@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
-import { IconProps } from './types';
 import { css } from '@emotion/react';
+
+import { IconProps } from './types';
 
 export const Icon = styled.img<IconProps>`
   ${({ size }) =>
