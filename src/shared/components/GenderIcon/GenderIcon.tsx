@@ -1,7 +1,7 @@
-import { GenderIconProps, IconAttributes } from './types';
+import { GenderIconProps, ImageAttributes } from './types';
 import { Icon } from './styles';
 
-const iconAttributes: IconAttributes = {
+const imageAttributes: ImageAttributes = {
   female: {
     src: 'assets/icons/female.png',
     alt: 'símbolo feminino',
@@ -13,5 +13,5 @@ const iconAttributes: IconAttributes = {
 };
 
 export function GenderIcon({ gender, size }: GenderIconProps) {
-  return <Icon size={size} {...iconAttributes[gender]} />;
+  return <Icon size={size} {...imageAttributes[gender]} />;
 }
