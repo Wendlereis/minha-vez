@@ -7,8 +7,13 @@ export const Position = styled.td`
   width: 40px;
 `;
 
+export const Player = styled.td`
+  display: flex;
+  gap: 8px;
+`;
+
 export const Row = styled.tr<RowProps>`
-  display: block;
+  display: flex;
   padding: 12px 0;
   border-top: 1px solid ${theme.colors.background.sand};
 

@@ -11,7 +11,6 @@ function getImageAttributes(gender: Gender) {
       };
 
     case 'male':
-    default:
       return {
         src: 'assets/icons/male.png',
         alt: 'símbolo masculino',

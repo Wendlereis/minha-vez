@@ -11,7 +11,6 @@ function getIconSizes(size: Size) {
         height: 32px;
       `;
     case 'small':
-    default:
       return css`
         width: 20px;
         height: 20px;

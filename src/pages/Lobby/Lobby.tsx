@@ -8,7 +8,7 @@ export function Lobby() {
   const playersInQueue = [
     { name: 'Fulano', id: '123', gender: 'male' as Gender },
     { name: 'Ciclano', id: '1234', gender: 'male' as Gender },
-    { name: 'Beltrano', id: '1923', gender: 'male' as Gender },
+    { name: 'Beltrana', id: '1923', gender: 'female' as Gender },
     { name: 'Amigo', id: '1913', gender: 'male' as Gender },
   ];
 
