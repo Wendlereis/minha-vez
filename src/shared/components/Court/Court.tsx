@@ -1,20 +1,9 @@
 import { GenderIcon } from '@shared/components/GenderIcon';
 
-import { EmptyCourtImage, Player, StyledCard, Text, Wrapper } from './styles';
+import { Player, StyledCard, Text, Wrapper } from './styles';
 import { CourtProps } from './types';
 
 export function Court({ court }: CourtProps) {
-  if (!court) {
-    return (
-      <StyledCard variant="court">
-        <EmptyCourtImage
-          src="assets/sports-equipment-backpack.webp"
-          alt="Mochila com equipamentos de esporte"
-        />
-      </StyledCard>
-    );
-  }
-
   return (
     <StyledCard variant="court">
       <Wrapper>

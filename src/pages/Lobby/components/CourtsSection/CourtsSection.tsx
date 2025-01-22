@@ -2,6 +2,7 @@ import { Card } from '@shared/components/Card';
 import { Court } from '@shared/components/Court';
 import { Typography } from '@shared/components/Typography';
 
+import { EmptyCourt } from './EmptyCourt';
 import { Logo, TitleWrapper, Content } from './styles';
 import { CourtsSectionProps } from './types';
 
@@ -23,7 +24,7 @@ export function CourtsSection({ courts }: CourtsSectionProps) {
           )}
         </TitleWrapper>
         {hasEmptyState ? (
-          <Court />
+          <EmptyCourt />
         ) : (
           fullCourts.map((court) => <Court key={court[0].id} court={court} />)
         )}

@@ -3,9 +3,9 @@ import { Card } from '@shared/components/Card';
 import { Typography } from '@shared/components/Typography';
 
 export const StyledCard = styled(Card)`
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
 `;
 
 export const Wrapper = styled.div`
@@ -13,10 +13,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   gap: 4px;
   max-width: 100%;
-`;
-
-export const EmptyCourtImage = styled.img`
-  width: 160px;
 `;
 
 export const Player = styled.div`
