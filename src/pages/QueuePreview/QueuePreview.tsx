@@ -12,7 +12,7 @@ import {
 } from './styles';
 
 export function QueuePreview() {
-  const isQueueEmpty = true;
+  const isQueueEmpty = false;
 
   return (
     <Container>

@@ -15,7 +15,7 @@ export function QueueDisclaimer({
   hasEnoughPlayers,
   nextGameDate,
 }: QueueDisclaimerProps) {
-  if (!hasEnoughPlayers) {
+  if (!hasEnoughPlayers || !nextGameDate) {
     return (
       <Typography>
         Aguarde a entrada de outros jogadores para formar o próximo grupo.

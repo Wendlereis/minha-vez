@@ -6,10 +6,8 @@ import { EmptyCourt } from './EmptyCourt';
 import { Logo, TitleWrapper, Content } from './styles';
 import { CourtsSectionProps } from './types';
 
-export function CourtsSection({ courts }: CourtsSectionProps) {
-  const fullCourts = courts.filter((court) => court.length > 0);
-
-  const hasEmptyState = fullCourts.length === 0;
+export function CourtsSection({ court }: CourtsSectionProps) {
+  const hasEmptyState = court.length === 0;
 
   return (
     <Card variant="header">
@@ -26,7 +24,7 @@ export function CourtsSection({ courts }: CourtsSectionProps) {
         {hasEmptyState ? (
           <EmptyCourt />
         ) : (
-          fullCourts.map((court) => <Court key={court[0].id} court={court} />)
+          <Court key={court[0].id} court={court} />
         )}
       </Content>
     </Card>

@@ -1,4 +1,4 @@
 export interface QueueDisclaimerProps {
-  nextGameDate: string;
+  nextGameDate?: string;
   hasEnoughPlayers: boolean;
 }

@@ -3,7 +3,7 @@ import confetti from 'canvas-confetti';
 
 import { Typography } from '@shared/components/Typography';
 import { Court } from '@shared/components/Court';
-import { Gender } from '@shared/types';
+import { Athlete } from '@shared/types';
 
 import { Actions } from './components/Actions';
 import { Container, Content, CourtWrapper, Image } from './styles';
@@ -26,17 +26,7 @@ function buildConfetti() {
   });
 }
 
-export function YourTurn() {
-  const players = [
-    { name: 'Fulano da Silva', id: '1234', gender: 'male' as Gender },
-    {
-      name: 'Beltrano dos Santos Silva',
-      id: '1214',
-      gender: 'male' as Gender,
-    },
-    { name: 'Ciclano de Souza', id: '1224', gender: 'male' as Gender },
-  ];
-
+export function YourTurn({ game = [] }: { game?: Athlete[] }) {
   useEffect(() => {
     buildConfetti();
   }, []);
@@ -55,7 +45,7 @@ export function YourTurn() {
           <Typography variant="h3" color="text.heading.dark">
             Você vai jogar com
           </Typography>
-          <Court court={players} />
+          <Court court={game} />
         </CourtWrapper>
       </Content>
       <Actions />

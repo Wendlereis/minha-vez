@@ -1,4 +1,4 @@
-import { GenderIcon } from '@shared/components/GenderIcon';
+// import { GenderIcon } from '@shared/components/GenderIcon';
 import { Player, Position, Row } from './styles';
 import { PlayersTableProps } from './types';
 
@@ -8,7 +8,7 @@ export function PlayersTable({ players }: PlayersTableProps) {
   return (
     <table>
       <tbody>
-        {players.map(({ id, name, gender }, index) => {
+        {players.map(({ id, name }, index) => {
           const isCurrentUser = id === currentUserId;
 
           return (
@@ -19,7 +19,7 @@ export function PlayersTable({ players }: PlayersTableProps) {
               ) : (
                 <Player>
                   {name}
-                  <GenderIcon gender={gender} size="small" />
+                  {/* <GenderIcon gender={gender} size="small" /> */}
                 </Player>
               )}
             </Row>

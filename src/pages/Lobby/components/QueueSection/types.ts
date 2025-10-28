@@ -1,6 +1,6 @@
-import { Player } from '@shared/types';
+import { Athlete } from '@shared/types';
 
 export interface QueueSectionProps {
-  players: Player[];
-  nextGameDate: string;
+  players?: Athlete[];
+  nextGameDate?: string;
 }

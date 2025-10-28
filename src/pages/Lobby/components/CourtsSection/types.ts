@@ -1,7 +1,7 @@
-import { Player } from '@shared/types';
+import { Athlete } from '@shared/types';
 
-type Court = Player[];
+type Court = Athlete[];
 
 export interface CourtsSectionProps {
-  courts: Court[];
+  court: Court;
 }
