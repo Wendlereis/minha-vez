@@ -10,7 +10,9 @@ import { Pages } from './types';
 
 import { io } from 'socket.io-client';
 
-const socket = io(process.env.SERVER_URL, { autoConnect: false });
+const URL = 'http://localhost:3000';
+
+const socket = io(URL, { autoConnect: false });
 
 socket.connect();
 
