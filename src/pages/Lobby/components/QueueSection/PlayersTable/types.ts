@@ -1,7 +1,7 @@
 import { Athlete } from '@shared/types';
 
 export interface PlayersTableProps {
-  players: Athlete[];
+  athletes: Athlete[];
 }
 
 export interface RowProps {

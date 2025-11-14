@@ -10,17 +10,13 @@ import { Pages } from './types';
 
 import { io } from 'socket.io-client';
 
-const URL = 'http://localhost:3000';
-
-const socket = io(URL, { autoConnect: false });
+const socket = io(process.env.SERVER_URL, { autoConnect: false });
 
 socket.connect();
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Pages>('lobby');
-  const [{ atheletes, court, nextGameDate }, setLobby] = useState<LobbyType>(
-    {},
-  );
+  const [{ athletes, court, nextGameDate }, setLobby] = useState<LobbyType>({});
   const [nextGame, setNextGame] = useState<Athlete[] | undefined>(undefined);
 
   function handleNextGame(game: Athlete[]) {
@@ -40,18 +36,12 @@ function App() {
     };
   }, []);
 
-  console.log({ atheletes, court, nextGameDate });
-
   switch (currentPage) {
     case 'login':
       return <Login />;
     case 'lobby':
       return (
-        <Lobby
-          atheletes={atheletes}
-          court={court}
-          nextGameDate={nextGameDate}
-        />
+        <Lobby athletes={athletes} court={court} nextGameDate={nextGameDate} />
       );
     case 'queue-preview':
       return <QueuePreview />;

@@ -1,4 +1,4 @@
-// import { GenderIcon } from '@shared/components/GenderIcon';
+import { GenderIcon } from '@shared/components/GenderIcon';
 
 import { Player, StyledCard, Text, Wrapper } from './styles';
 import { CourtProps } from './types';
@@ -7,9 +7,9 @@ export function Court({ court }: CourtProps) {
   return (
     <StyledCard variant="court">
       <Wrapper>
-        {court.map(({ id, name }) => (
+        {court.map(({ id, name, gender }) => (
           <Player key={id}>
-            {/* <GenderIcon size="small" /> */}
+            <GenderIcon gender={gender} size="small" />
             <Text>{name}</Text>
           </Player>
         ))}

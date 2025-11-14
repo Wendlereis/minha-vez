@@ -3,11 +3,11 @@ export type Gender = 'male' | 'female';
 export type Athlete = {
   name: string;
   id: string;
-  // gender: Gender;
+  gender: Gender;
 };
 
 export type Lobby = {
-  atheletes?: Athlete[];
+  athletes?: Athlete[];
   court?: Athlete[];
   nextGameDate?: string;
 };
