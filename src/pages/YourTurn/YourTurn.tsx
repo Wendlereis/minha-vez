@@ -26,7 +26,9 @@ function buildConfetti() {
   });
 }
 
-export function YourTurn({ game = [] }: { game?: Athlete[] }) {
+type YourTurnProps = { game?: Athlete[] }
+
+export function YourTurn({ game = [] }: YourTurnProps) {
   useEffect(() => {
     buildConfetti();
   }, []);
