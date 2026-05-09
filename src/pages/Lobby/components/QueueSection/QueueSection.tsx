@@ -12,6 +12,7 @@ import { QueueDisclaimer } from './QueueDisclaimer';
 export function QueueSection({
   athletes = [],
   nextGameDate,
+  onLeave,
 }: QueueSectionProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -43,7 +44,7 @@ export function QueueSection({
           subtitle="Você perderá a sua posição atual, mas poderá entrar novamente na
               fila quando quiser."
           actions={[
-            { label: 'Sair da fila', onClick: () => setIsDialogOpen(false) },
+            { label: 'Sair da fila', onClick: onLeave },
             {
               label: 'Voltar',
               onClick: () => setIsDialogOpen(false),

@@ -42,6 +42,11 @@ function App() {
     }
   }
 
+  function handleLeave() {
+    socket.emit('lobby:leave');
+    setCurrentPage('queue-preview');
+  }
+
   useEffect(() => {
     socket.on('lobby:list', setLobby);
     socket.on('lobby:preview', setPreviewInfo);
@@ -59,7 +64,7 @@ function App() {
       return <Login onLogin={handleLogin} />;
     case 'lobby':
       return (
-        <Lobby athletes={athletes} court={court} nextGameDate={nextGameDate} />
+        <Lobby athletes={athletes} court={court} nextGameDate={nextGameDate} onLeave={handleLeave} />
       );
     case 'queue-preview':
       return (
