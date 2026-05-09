@@ -25,7 +25,7 @@ function App() {
 
   function handleNextGame(game: Athlete[]) {
     setNextGame(game);
-    if (game.length) {
+    if (game.some((a) => a.id === socket.id)) {
       setCurrentPage('your-turn');
     }
   }
