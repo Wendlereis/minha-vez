@@ -43,8 +43,11 @@ function App() {
   }
 
   function handleLeave() {
-    socket.emit('lobby:leave');
-    setCurrentPage('queue-preview');
+    if (user) {
+      socket.emit('lobby:leave');
+      setLobby({});
+      setCurrentPage('queue-preview');
+    }
   }
 
   useEffect(() => {
