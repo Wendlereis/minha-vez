@@ -26,9 +26,14 @@ function buildConfetti() {
   });
 }
 
-type YourTurnProps = { game?: Athlete[] }
+type YourTurnProps = {
+  game?: Athlete[];
+  onSkip: () => void;
+  onJoinCourt: () => void;
+  onFinishGame: () => void;
+};
 
-export function YourTurn({ game = [] }: YourTurnProps) {
+export function YourTurn({ game = [], onSkip, onJoinCourt, onFinishGame }: YourTurnProps) {
   useEffect(() => {
     buildConfetti();
   }, []);
@@ -50,7 +55,7 @@ export function YourTurn({ game = [] }: YourTurnProps) {
           <Court court={game} />
         </CourtWrapper>
       </Content>
-      <Actions />
+      <Actions onSkip={onSkip} onJoinCourt={onJoinCourt} onFinishGame={onFinishGame} />
     </Container>
   );
 }
