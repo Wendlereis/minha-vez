@@ -19,7 +19,10 @@ socket.connect();
 function App() {
   const [currentPage, setCurrentPage] = useState<Pages>('login');
   const [{ athletes, court, nextGameDate }, setLobby] = useState<LobbyType>({});
-  const [previewInfo, setPreviewInfo] = useState<{ queueSize: number; nextGameDate: string } | null>(null);
+  const [previewInfo, setPreviewInfo] = useState<{
+    queueSize: number;
+    nextGameDate: string;
+  } | null>(null);
   const [nextGame, setNextGame] = useState<Athlete[] | undefined>(undefined);
   const [user, setUser] = useState<Omit<Athlete, 'id'> | null>(null);
 
@@ -88,7 +91,12 @@ function App() {
       return <Login onLogin={handleLogin} />;
     case 'lobby':
       return (
-        <Lobby athletes={athletes} court={court} nextGameDate={nextGameDate} onLeave={handleLeave} />
+        <Lobby
+          athletes={athletes}
+          court={court}
+          nextGameDate={nextGameDate}
+          onLeave={handleLeave}
+        />
       );
     case 'queue-preview':
       return (

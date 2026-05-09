@@ -12,7 +12,11 @@ export function Lobby({ athletes, court, nextGameDate, onLeave }: LobbyProps) {
   return (
     <Container>
       <CourtsSection court={court ?? []} />
-      <QueueSection athletes={athletes} nextGameDate={nextGameDate} onLeave={onLeave} />
+      <QueueSection
+        athletes={athletes}
+        nextGameDate={nextGameDate}
+        onLeave={onLeave}
+      />
     </Container>
   );
 }

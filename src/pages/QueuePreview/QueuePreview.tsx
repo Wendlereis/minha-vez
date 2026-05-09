@@ -17,11 +17,18 @@ interface QueuePreviewProps {
   onJoin: () => void;
 }
 
-export function QueuePreview({ queueSize, nextGameDate, onJoin }: QueuePreviewProps) {
+export function QueuePreview({
+  queueSize,
+  nextGameDate,
+  onJoin,
+}: QueuePreviewProps) {
   const isQueueEmpty = queueSize === 0;
 
   const minutesToWait = nextGameDate
-    ? Math.max(0, Math.round((new Date(nextGameDate).getTime() - Date.now()) / 60000))
+    ? Math.max(
+        0,
+        Math.round((new Date(nextGameDate).getTime() - Date.now()) / 60000),
+      )
     : 0;
 
   return (
