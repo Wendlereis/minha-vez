@@ -5,18 +5,22 @@ import { Input } from '@shared/components/Input';
 
 import { Container, Form, InputsWrapper, Title } from './styles';
 import { GenderSelector } from './components/GenderSelector';
+import { Athlete } from '@shared/types';
 
-export function Login() {
+interface LoginProps {
+  onLogin: (data: Omit<Athlete, 'id'>) => void;
+}
+
+export function Login({ onLogin }: LoginProps) {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    const data = Object.fromEntries(formData.entries());
+    const data = Object.fromEntries(formData.entries()) as Omit<Athlete, 'id'>;
 
-    // TODO - properly handle form data
-    console.log(data);
+    onLogin(data);
   };
   return (
     <Container>

@@ -11,8 +11,18 @@ import {
   PreviewContainer,
 } from './styles';
 
-export function QueuePreview() {
-  const isQueueEmpty = false;
+interface QueuePreviewProps {
+  queueSize: number;
+  nextGameDate?: string;
+  onJoin: () => void;
+}
+
+export function QueuePreview({ queueSize, nextGameDate, onJoin }: QueuePreviewProps) {
+  const isQueueEmpty = queueSize === 0;
+
+  const minutesToWait = nextGameDate
+    ? Math.max(0, Math.round((new Date(nextGameDate).getTime() - Date.now()) / 60000))
+    : 0;
 
   return (
     <Container>
@@ -42,20 +52,20 @@ export function QueuePreview() {
               </CenteredText>
               <PreviewContainer>
                 <PreviewItem
-                  number={45}
+                  number={minutesToWait}
                   title="minutos"
                   description="Tempo estimado de espera até o seu próximo jogo"
                 />
 
                 <PreviewItem
-                  number={12}
+                  number={queueSize}
                   title="atletas"
                   description="Esperando para jogar"
                 />
               </PreviewContainer>
             </>
           )}
-          <Button label="Entrar na fila" onClick={() => {}} />
+          <Button label="Entrar na fila" onClick={onJoin} />
         </Content>
       </Card>
     </Container>
