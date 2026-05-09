@@ -50,6 +50,27 @@ function App() {
     }
   }
 
+  function handleSkip() {
+    if (user) {
+      socket.emit('lobby:leave');
+      socket.emit('lobby:join', user);
+      setCurrentPage('lobby');
+    }
+  }
+
+  function handleJoinCourt() {
+    if (user) {
+      socket.emit('court:join', user);
+    }
+  }
+
+  function handleFinishGame() {
+    if (user) {
+      socket.emit('court:leave', user);
+      setCurrentPage('lobby');
+    }
+  }
+
   useEffect(() => {
     socket.on('lobby:list', setLobby);
     socket.on('lobby:preview', setPreviewInfo);
@@ -78,7 +99,14 @@ function App() {
         />
       );
     case 'your-turn':
-      return <YourTurn game={nextGame} />;
+      return (
+        <YourTurn
+          game={nextGame}
+          onSkip={handleSkip}
+          onJoinCourt={handleJoinCourt}
+          onFinishGame={handleFinishGame}
+        />
+      );
     default:
       return null;
   }
