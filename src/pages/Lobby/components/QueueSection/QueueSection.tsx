@@ -44,7 +44,7 @@ export function QueueSection({
           subtitle="Você perderá a sua posição atual, mas poderá entrar novamente na
               fila quando quiser."
           actions={[
-            { label: 'Sair da fila', onClick: () => { setIsDialogOpen(false); onLeave(); } },
+            { label: 'Sair da fila', onClick: () => { setIsDialogOpen(false); onLeave?.(); } },
             {
               label: 'Voltar',
               onClick: () => setIsDialogOpen(false),
