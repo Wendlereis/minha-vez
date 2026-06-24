@@ -6,7 +6,7 @@ import { QueuePreview } from './pages/QueuePreview';
 import { YourTurn } from './pages/YourTurn';
 
 import { Athlete, Lobby as LobbyType } from '@shared/types';
-import { Pages } from './types';
+import { Pages, PendingPlayer } from './types';
 
 import { io } from 'socket.io-client';
 
@@ -23,13 +23,17 @@ function App() {
     queueSize: number;
     nextGameDate: string;
   } | null>(null);
-  const [nextGame, setNextGame] = useState<Athlete[] | undefined>(undefined);
+  const [nextGame, setNextGame] = useState<PendingPlayer[] | undefined>(undefined);
   const [user, setUser] = useState<Omit<Athlete, 'id'> | null>(null);
 
-  function handleNextGame(game: Athlete[]) {
+  function handleNextGame(game: PendingPlayer[]) {
     setNextGame(game);
-    if (game.some((a) => a.id === socket.id)) {
+    // Only switch to 'your-turn' if the user is pending or accepted
+    if (game.some((p) => p.athlete.id === socket.id && p.status !== 'declined')) {
       setCurrentPage('your-turn');
+    } else if (currentPage === 'your-turn') {
+      // If user was declined or removed, kick them back to lobby
+      setCurrentPage('lobby');
     }
   }
 
@@ -55,8 +59,7 @@ function App() {
 
   function handleSkip() {
     if (user) {
-      socket.emit('lobby:leave');
-      socket.emit('lobby:join', user);
+      socket.emit('court:skip', user);
       setCurrentPage('lobby');
     }
   }
@@ -67,10 +70,16 @@ function App() {
     }
   }
 
-  function handleFinishGame() {
+  function handleFinishGame(rejoinQueue: boolean) {
     if (user) {
-      socket.emit('court:leave', user);
-      setCurrentPage('lobby');
+      socket.emit('court:leave', { ...user, rejoinQueue });
+      if (rejoinQueue) {
+        setCurrentPage('lobby');
+      } else {
+        socket.emit('lobby:leave');
+        setLobby({});
+        setCurrentPage('queue-preview');
+      }
     }
   }
 

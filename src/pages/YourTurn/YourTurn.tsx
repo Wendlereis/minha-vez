@@ -1,9 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
 
 import { Typography } from '@shared/components/Typography';
-import { Court } from '@shared/components/Court';
-import { Athlete } from '@shared/types';
+import { PendingPlayer } from '../../types';
 
 import { Actions } from './components/Actions';
 import { Container, Content, CourtWrapper, Image } from './styles';
@@ -27,10 +26,10 @@ function buildConfetti() {
 }
 
 type YourTurnProps = {
-  game?: Athlete[];
+  game?: PendingPlayer[];
   onSkip: () => void;
   onJoinCourt: () => void;
-  onFinishGame: () => void;
+  onFinishGame: (rejoinQueue: boolean) => void;
 };
 
 export function YourTurn({
@@ -39,9 +38,19 @@ export function YourTurn({
   onJoinCourt,
   onFinishGame,
 }: YourTurnProps) {
+  const [timeLeft, setTimeLeft] = useState(60);
+
   useEffect(() => {
     buildConfetti();
   }, []);
+
+  useEffect(() => {
+    if (timeLeft <= 0) return;
+    const interval = setInterval(() => {
+      setTimeLeft(prev => prev - 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [timeLeft]);
 
   return (
     <Container>
@@ -55,9 +64,18 @@ export function YourTurn({
         </Typography>
         <CourtWrapper>
           <Typography variant="h3" color="text.heading.dark">
-            Você vai jogar com
+            Você vai jogar com ({timeLeft}s)
           </Typography>
-          <Court court={game} />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '20px' }}>
+            {game.map((p) => (
+              <div key={p.athlete.id} style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Typography variant="body1" color="text.body.dark">{p.athlete.name}</Typography>
+                <Typography variant="body2" color="text.body.dark">
+                  {p.status === 'pending' ? '⏳ Aguardando' : p.status === 'accepted' ? '✅ Aceitou' : '❌ Recusou'}
+                </Typography>
+              </div>
+            ))}
+          </div>
         </CourtWrapper>
       </Content>
       <Actions

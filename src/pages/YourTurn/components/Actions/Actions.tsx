@@ -5,7 +5,7 @@ import { useState } from 'react';
 type ActionsProps = {
   onSkip: () => void;
   onJoinCourt: () => void;
-  onFinishGame: () => void;
+  onFinishGame: (rejoinQueue: boolean) => void;
 };
 
 export function Actions({ onSkip, onJoinCourt, onFinishGame }: ActionsProps) {
@@ -27,14 +27,12 @@ export function Actions({ onSkip, onJoinCourt, onFinishGame }: ActionsProps) {
 
   return (
     <GameStartedWrapper>
-      <Button label="Finalizar partida" onClick={onFinishGame} />
+      <Button label="Finalizar e voltar pra fila" onClick={() => onFinishGame(true)} />
+      <Button label="Finalizar e sair" variant="text" onClick={() => onFinishGame(false)} />
       <div>
         <CenteredText variant="body2">
           Finalize a partida ao sair da quadra para dar lugar aos próximos
           atletas.
-        </CenteredText>
-        <CenteredText variant="body2">
-          Você voltará automaticamente para o fim da fila.
         </CenteredText>
       </div>
     </GameStartedWrapper>
