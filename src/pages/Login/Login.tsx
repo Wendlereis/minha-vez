@@ -31,7 +31,7 @@ export function Login({ onLogin }: LoginProps) {
             Para começar, insira o seu nome
           </Title>
           <InputsWrapper>
-            <Input placeholder="Seu nome" label="Nome" name="name" />
+            <Input placeholder="Seu nome" label="Nome" name="name" required />
             <GenderSelector />
           </InputsWrapper>
           <Button label="Acessar" type="submit" />

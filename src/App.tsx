@@ -25,15 +25,16 @@ function App() {
   } | null>(null);
   const [nextGame, setNextGame] = useState<PendingPlayer[] | undefined>(undefined);
   const [user, setUser] = useState<Omit<Athlete, 'id'> | null>(null);
+  const [hasLeftCourt, setHasLeftCourt] = useState(false);
 
   function handleNextGame(game: PendingPlayer[]) {
     setNextGame(game);
     // Only switch to 'your-turn' if the user is pending or accepted
     if (game.some((p) => p.athlete.id === socket.id && p.status !== 'declined')) {
       setCurrentPage('your-turn');
-    } else if (currentPage === 'your-turn') {
+    } else {
       // If user was declined or removed, kick them back to lobby
-      setCurrentPage('lobby');
+      setCurrentPage((prev) => (prev === 'your-turn' ? 'lobby' : prev));
     }
   }
 
@@ -66,6 +67,7 @@ function App() {
 
   function handleJoinCourt() {
     if (user) {
+      setHasLeftCourt(false); // Reset when joining a new court
       socket.emit('court:join', user);
     }
   }
@@ -76,6 +78,7 @@ function App() {
       if (rejoinQueue) {
         setCurrentPage('lobby');
       } else {
+        setHasLeftCourt(true);
         socket.emit('lobby:leave');
         setLobby({});
         setCurrentPage('queue-preview');
@@ -94,6 +97,22 @@ function App() {
       socket.off('court:next-game', handleNextGame);
     };
   }, []);
+
+  const isPlaying = court?.some(p => p.id === socket.id);
+
+  if (isPlaying && !hasLeftCourt) {
+    return (
+      <YourTurn
+        game={[]} // We'll pass court as game in the component
+        court={court}
+        userId={socket.id}
+        isPlaying={true}
+        onSkip={handleSkip}
+        onJoinCourt={handleJoinCourt}
+        onFinishGame={handleFinishGame}
+      />
+    );
+  }
 
   switch (currentPage) {
     case 'login':
@@ -119,6 +138,7 @@ function App() {
       return (
         <YourTurn
           game={nextGame}
+          userId={socket.id}
           onSkip={handleSkip}
           onJoinCourt={handleJoinCourt}
           onFinishGame={handleFinishGame}

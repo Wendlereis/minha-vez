@@ -6,8 +6,12 @@ export type Athlete = {
   gender: Gender;
 };
 
+export type CourtPlayer = Athlete & {
+  status?: 'playing' | 'finishing';
+};
+
 export type Lobby = {
   athletes?: Athlete[];
-  court?: Athlete[];
+  court?: CourtPlayer[];
   nextGameDate?: string;
 };

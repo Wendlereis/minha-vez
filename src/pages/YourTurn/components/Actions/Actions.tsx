@@ -1,40 +1,43 @@
 import { Button } from '@shared/components/Button';
-import { CenteredText, GameStartedWrapper, Wrapper } from './styles';
-import { useState } from 'react';
+import { Wrapper, GameStartedWrapper, CenteredText } from './styles';
 
 type ActionsProps = {
+  isPlaying?: boolean;
+  myStatus?: string;
   onSkip: () => void;
   onJoinCourt: () => void;
   onFinishGame: (rejoinQueue: boolean) => void;
 };
 
-export function Actions({ onSkip, onJoinCourt, onFinishGame }: ActionsProps) {
-  const [gameStarted, setGameStarted] = useState(false);
-
-  function handleJoinCourt() {
-    onJoinCourt();
-    setGameStarted(true);
-  }
-
-  if (!gameStarted) {
+export function Actions({ isPlaying, myStatus, onSkip, onJoinCourt, onFinishGame }: ActionsProps) {
+  if (isPlaying) {
     return (
-      <Wrapper>
-        <Button label="Entrar em quadra" onClick={handleJoinCourt} />
-        <Button label="Voltar para a fila" onClick={onSkip} variant="text" />
-      </Wrapper>
+      <GameStartedWrapper>
+        {myStatus === 'playing' ? (
+          <>
+            <Button label="Finalizar e voltar pra fila" onClick={() => onFinishGame(true)} />
+            <Button label="Finalizar e sair" variant="text" onClick={() => onFinishGame(false)} />
+            <div>
+              <CenteredText variant="body2">
+                Finalize a partida ao sair da quadra para dar lugar aos próximos atletas.
+              </CenteredText>
+            </div>
+          </>
+        ) : (
+          <div style={{ fontWeight: 'bold', textAlign: 'center' }}>
+            <CenteredText variant="body1" color="secondary.main">
+              Aguardando os outros jogadores finalizarem a partida...
+            </CenteredText>
+          </div>
+        )}
+      </GameStartedWrapper>
     );
   }
 
   return (
-    <GameStartedWrapper>
-      <Button label="Finalizar e voltar pra fila" onClick={() => onFinishGame(true)} />
-      <Button label="Finalizar e sair" variant="text" onClick={() => onFinishGame(false)} />
-      <div>
-        <CenteredText variant="body2">
-          Finalize a partida ao sair da quadra para dar lugar aos próximos
-          atletas.
-        </CenteredText>
-      </div>
-    </GameStartedWrapper>
+    <Wrapper>
+      <Button label="Entrar em quadra" onClick={onJoinCourt} />
+      <Button label="Voltar para a fila" onClick={onSkip} variant="text" />
+    </Wrapper>
   );
 }

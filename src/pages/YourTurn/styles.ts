@@ -25,5 +25,6 @@ export const Content = styled.section`
 export const CourtWrapper = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
 `;

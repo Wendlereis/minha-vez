@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
 
 import { Typography } from '@shared/components/Typography';
+import { Court } from '@shared/components/Court';
 import { PendingPlayer } from '../../types';
 
 import { Actions } from './components/Actions';
@@ -27,6 +28,9 @@ function buildConfetti() {
 
 type YourTurnProps = {
   game?: PendingPlayer[];
+  court?: any[]; // We'll just use any[] here to avoid strict circular imports if not needed
+  isPlaying?: boolean;
+  userId?: string;
   onSkip: () => void;
   onJoinCourt: () => void;
   onFinishGame: (rejoinQueue: boolean) => void;
@@ -34,6 +38,9 @@ type YourTurnProps = {
 
 export function YourTurn({
   game = [],
+  court = [],
+  isPlaying = false,
+  userId,
   onSkip,
   onJoinCourt,
   onFinishGame,
@@ -64,21 +71,22 @@ export function YourTurn({
         </Typography>
         <CourtWrapper>
           <Typography variant="h3" color="text.heading.dark">
-            Você vai jogar com ({timeLeft}s)
+            {isPlaying ? 'Você está jogando com' : `Você vai jogar com (${timeLeft}s)`}
           </Typography>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '20px' }}>
-            {game.map((p) => (
-              <div key={p.athlete.id} style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Typography variant="body1" color="text.body.dark">{p.athlete.name}</Typography>
-                <Typography variant="body2" color="text.body.dark">
-                  {p.status === 'pending' ? '⏳ Aguardando' : p.status === 'accepted' ? '✅ Aceitou' : '❌ Recusou'}
-                </Typography>
-              </div>
-            ))}
-          </div>
+          <Court court={isPlaying ? court.map(p => ({ 
+            ...p, 
+            name: p.id === userId ? 'Você' : p.name,
+            status: p.status 
+          })) : game.map(p => ({ 
+            ...p.athlete, 
+            name: p.athlete.id === userId ? 'Você' : p.athlete.name,
+            status: p.status 
+          }))} />
         </CourtWrapper>
       </Content>
       <Actions
+        isPlaying={isPlaying}
+        myStatus={court.find(p => p.id === userId)?.status}
         onSkip={onSkip}
         onJoinCourt={onJoinCourt}
         onFinishGame={onFinishGame}

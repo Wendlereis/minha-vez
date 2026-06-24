@@ -7,10 +7,17 @@ export function Court({ court }: CourtProps) {
   return (
     <StyledCard variant="court">
       <Wrapper>
-        {court.map(({ id, name, gender }) => (
+        {court.map(({ id, name, gender, status }) => (
           <Player key={id}>
             <GenderIcon gender={gender} size="small" />
-            <Text>{name}</Text>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <Text>{name}</Text>
+              {status && status !== 'playing' && (
+                <span style={{ fontSize: '10px', color: '#666', marginTop: '-4px' }}>
+                  {status === 'pending' ? '⏳ Aguardando' : status === 'accepted' ? '✅ Aceitou' : status === 'finishing' ? '👋 Saindo...' : '❌ Recusou'}
+                </span>
+              )}
+            </div>
           </Player>
         ))}
       </Wrapper>
