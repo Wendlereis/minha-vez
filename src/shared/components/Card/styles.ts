@@ -12,8 +12,8 @@ export const CourtCard = styled.section`
   background: ${theme.colors.background.sand};
   border-radius: 30px;
   width: 200px;
-  height: 130px;
-  padding: 0 16px;
+  min-height: 130px;
+  padding: 16px;
 `;
 
 export const HeaderCard = styled.header`

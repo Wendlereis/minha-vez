@@ -3,4 +3,5 @@ export interface InputProps {
   label: string;
   helper?: string;
   name: string;
+  required?: boolean;
 }

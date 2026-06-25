@@ -15,3 +15,7 @@ export const GameStartedWrapper = styled(Wrapper)`
 export const CenteredText = styled(Typography)`
   text-align: center;
 `;
+
+export const WaitingText = styled(CenteredText)`
+  font-weight: bold;
+`;

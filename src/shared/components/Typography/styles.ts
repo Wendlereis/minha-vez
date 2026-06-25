@@ -46,3 +46,10 @@ export const Body1 = styled.p<StyledTypographyProps>`
   line-height: 20px;
   ${({ color }) => getPropertiesFromExternal(color)}
 `;
+
+export const Caption = styled.span<StyledTypographyProps>`
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  ${({ color }) => getPropertiesFromExternal(color)}
+`;

@@ -15,6 +15,7 @@ export function GenderSelector() {
           name="gender"
           id="female"
           value="female"
+          required
           onChange={(e) => setGender(e.target.value as Gender)}
         />
         <Option htmlFor="female" selected={gender === 'female'} tabIndex={0}>
@@ -26,6 +27,7 @@ export function GenderSelector() {
           name="gender"
           id="male"
           value="male"
+          required
           onChange={(e) => setGender(e.target.value as Gender)}
         />
         <Option htmlFor="male" selected={gender === 'male'} tabIndex={0}>
