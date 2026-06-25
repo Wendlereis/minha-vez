@@ -1,6 +1,6 @@
-import { GenderIcon } from '@shared/components/GenderIcon';
+import { GenderIcon } from '../GenderIcon';
 
-import { Player, StyledCard, Text, Wrapper } from './styles';
+import { Player, StyledCard, Text, Wrapper, PlayerInfo, PlayerStatus } from './styles';
 import { CourtProps } from './types';
 
 export function Court({ court }: CourtProps) {
@@ -10,14 +10,14 @@ export function Court({ court }: CourtProps) {
         {court.map(({ id, name, gender, status }) => (
           <Player key={id}>
             <GenderIcon gender={gender} size="small" />
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <PlayerInfo>
               <Text>{name}</Text>
               {status && status !== 'playing' && (
-                <span style={{ fontSize: '10px', color: '#666', marginTop: '-4px' }}>
+                <PlayerStatus variant="caption">
                   {status === 'pending' ? '⏳ Aguardando' : status === 'accepted' ? '✅ Aceitou' : status === 'finishing' ? '👋 Saindo...' : '❌ Recusou'}
-                </span>
+                </PlayerStatus>
               )}
-            </div>
+            </PlayerInfo>
           </Player>
         ))}
       </Wrapper>

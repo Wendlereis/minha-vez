@@ -1,5 +1,5 @@
 import { Button } from '@shared/components/Button';
-import { Wrapper, GameStartedWrapper, CenteredText } from './styles';
+import { Wrapper, GameStartedWrapper, CenteredText, WaitingText } from './styles';
 
 type ActionsProps = {
   isPlaying?: boolean;
@@ -24,11 +24,9 @@ export function Actions({ isPlaying, myStatus, onSkip, onJoinCourt, onFinishGame
             </div>
           </>
         ) : (
-          <div style={{ fontWeight: 'bold', textAlign: 'center' }}>
-            <CenteredText variant="body1" color="secondary.main">
-              Aguardando os outros jogadores finalizarem a partida...
-            </CenteredText>
-          </div>
+          <WaitingText variant="body1" color="secondary.main">
+            Aguardando os outros jogadores finalizarem a partida...
+          </WaitingText>
         )}
       </GameStartedWrapper>
     );
